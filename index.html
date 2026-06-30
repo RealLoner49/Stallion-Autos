@@ -27,6 +27,7 @@
         const isOpen = navLinks.classList.toggle("is-open");
         menuButton.classList.toggle("is-open", isOpen);
         menuButton.setAttribute("aria-expanded", String(isOpen));
+        document.body.classList.toggle("menu-open", isOpen);
       });
 
       navLinks.querySelectorAll("a").forEach(function (link) {
@@ -34,6 +35,7 @@
           navLinks.classList.remove("is-open");
           menuButton.classList.remove("is-open");
           menuButton.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
         });
       });
 
@@ -42,6 +44,7 @@
           navLinks.classList.remove("is-open");
           menuButton.classList.remove("is-open");
           menuButton.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
         }
       });
     });
@@ -108,7 +111,7 @@
             <a class="btn ghost" href="#">Get Pre-Approved</a>
           </div>
         </div>
-        <img class="hero-car" src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Blue luxury sedan">
+        <img class="hero-car" src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Mercedes-Benz E-Class sedan">
       </div>
 
    </section>
@@ -126,19 +129,19 @@
         </div>
       </div>
       <div class="search-pills" aria-label="Popular searches">
-        <a href="#">Luxury SUVs</a>
-        <a href="#">Under $30k</a>
+        <a href="#">AMG Coupes</a>
+        <a href="#">Exotic Cars</a>
         <a href="#">Low Mileage</a>
-        <a href="#">Trade-In Ready</a>
+        <a href="#">Track Ready</a>
       </div>
       <form>
         <label>
           <span>Make</span>
-          <select><option>Any Make</option><option>Toyota</option><option>Honda</option><option>Ford</option><option>Chevrolet</option><option>BMW</option><option>Mercedes-Benz</option><option>Land Rover</option><option>Porsche</option></select>
+          <select><option>Any Make</option><option>Rolls-Royce</option><option>BMW</option><option>Mercedes-Benz</option><option>Alfa Romeo</option><option>Audi</option><option>Chevrolet</option><option>Yamaha</option></select>
         </label>
         <label>
           <span>Model</span>
-          <select><option>Any Model</option><option>RAV4 XLE</option><option>Accord EX-L</option><option>F-150 XLT SuperCrew</option><option>Camaro 2LT Coupe</option><option>M340i xDrive</option><option>GLE 350 4MATIC</option><option>Range Rover Sport HSE</option><option>911 Carrera Coupe</option></select>
+          <select><option>Any Model</option><option>Ghost Series II</option><option>3 Series Gran Turismo M Sport</option><option>YZF-R1 Track Bike</option><option>4C Coupe</option><option>C63 AMG Coupe</option><option>A3 Sedan S line</option><option>M4 Coupe</option><option>Corvette Grand Sport</option></select>
         </label>
         <label>
           <span>Body Style</span>
@@ -178,21 +181,21 @@
     <section class="spotlight container">
       <div class="spotlight-copy">
         <p class="eyebrow">Featured deal of the week</p>
-        <h2>2024 BMW M340i xDrive Sedan</h2>
-        <p>Turbocharged inline-six power, M Sport styling, premium leather interior, digital cockpit, and low mileage. Built for drivers who want executive comfort with real road presence.</p>
+        <h2>2014 Mercedes-Benz C63 AMG Coupe</h2>
+        <p>Naturally aspirated AMG V8 power, aggressive coupe stance, sport interior, performance wheels, and a clean black finish. Built for drivers who want old-school muscle with luxury-road presence.</p>
         <div class="spec-list">
-          <span>12,400 mi</span>
-          <span>Automatic</span>
-          <span>AWD</span>
+          <span>32,800 mi</span>
+          <span>7-Speed AMG Auto</span>
+          <span>RWD</span>
           <span>Clean title</span>
           <span>Warranty eligible</span>
         </div>
         <div class="price-row">
-          <strong>$48,990</strong>
+          <strong>$42,990</strong>
           <a class="btn primary" href="#">Schedule Test Drive</a>
         </div>
       </div>
-      <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="2024 BMW M340i xDrive Sedan">
+      <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="2014 Mercedes-Benz C63 AMG Coupe">
     </section>
 
     <section class="inventory container">
@@ -214,81 +217,81 @@
       <div class="vehicle-grid">
         <article class="vehicle-card">
           <strong>2023</strong>
-          <img src="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2023 Toyota RAV4 XLE SUV">
+          <img src="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2014 Rolls-Royce Ghost Series II">
           <div class="card-body">
-            <h3>2023 Toyota RAV4 XLE AWD</h3>
-            <p>28,120 mi <span>8-Speed Automatic</span></p>
-            <b>$26,490</b>
+            <h3>2014 Rolls-Royce Ghost Series II</h3>
+            <p>22,600 mi <span>8-Speed Automatic</span></p>
+            <b>$119,900</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2022</strong>
-          <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2022 Honda Accord EX-L sedan">
+          <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2016 BMW 3 Series Gran Turismo M Sport">
           <div class="card-body">
-            <h3>2022 Honda Accord EX-L Sedan</h3>
-            <p>31,540 mi <span>CVT Automatic</span></p>
-            <b>$24,990</b>
+            <h3>2016 BMW 3 Series Gran Turismo M Sport</h3>
+            <p>41,300 mi <span>8-Speed Sport Automatic</span></p>
+            <b>$27,900</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2021</strong>
-          <img src="https://images.pexels.com/photos/1119796/pexels-photo-1119796.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2021 Ford F-150 XLT SuperCrew truck">
+          <img src="https://images.pexels.com/photos/1119796/pexels-photo-1119796.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Yamaha YZF-R1 Track Bike">
           <div class="card-body">
-            <h3>2021 Ford F-150 XLT SuperCrew</h3>
-            <p>45,300 mi <span>10-Speed Automatic</span></p>
-            <b>$33,990</b>
+            <h3>Yamaha YZF-R1 Track Bike</h3>
+            <p>Track ready <span>6-Speed Manual</span></p>
+            <b>$18,900</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2023</strong>
-          <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2023 Chevrolet Camaro 2LT Coupe">
+          <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2015 Alfa Romeo 4C Coupe">
           <div class="card-body">
-            <h3>2023 Chevrolet Camaro 2LT Coupe</h3>
-            <p>10,860 mi <span>8-Speed Automatic</span></p>
-            <b>$28,990</b>
+            <h3>2015 Alfa Romeo 4C Coupe</h3>
+            <p>18,400 mi <span>6-Speed Dual-Clutch</span></p>
+            <b>$54,900</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2024</strong>
-          <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2024 BMW M340i xDrive sedan">
+          <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2014 Mercedes-Benz C63 AMG Coupe">
           <div class="card-body">
-            <h3>2024 BMW M340i xDrive Sedan</h3>
-            <p>12,400 mi <span>8-Speed Sport Automatic</span></p>
-            <b>$48,990</b>
+            <h3>2014 Mercedes-Benz C63 AMG Coupe</h3>
+            <p>32,800 mi <span>7-Speed AMG Auto</span></p>
+            <b>$42,990</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2022</strong>
-          <img src="https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2022 Mercedes-Benz GLE 350 4MATIC SUV">
+          <img src="https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2018 Audi A3 Sedan S line">
           <div class="card-body">
-            <h3>2022 Mercedes-Benz GLE 350 4MATIC</h3>
-            <p>29,210 mi <span>9G-TRONIC Automatic</span></p>
-            <b>$52,400</b>
+            <h3>2018 Audi A3 Sedan S line</h3>
+            <p>36,700 mi <span>7-Speed S tronic</span></p>
+            <b>$29,900</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2021</strong>
-          <img src="https://images.pexels.com/photos/3849555/pexels-photo-3849555.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2021 Land Rover Range Rover Sport HSE SUV">
+          <img src="https://images.pexels.com/photos/3849555/pexels-photo-3849555.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2018 BMW M4 Coupe">
           <div class="card-body">
-            <h3>2021 Land Rover Range Rover Sport HSE</h3>
-            <p>38,780 mi <span>8-Speed Automatic</span></p>
-            <b>$56,990</b>
+            <h3>2018 BMW M4 Coupe</h3>
+            <p>24,900 mi <span>7-Speed M DCT</span></p>
+            <b>$58,900</b>
             <a href="#">View Details</a>
           </div>
         </article>
         <article class="vehicle-card">
           <strong>2023</strong>
-          <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2023 Porsche 911 Carrera Coupe">
+          <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2017 Chevrolet Corvette Grand Sport">
           <div class="card-body">
-            <h3>2023 Porsche 911 Carrera Coupe</h3>
-            <p>8,950 mi <span>8-Speed PDK</span></p>
-            <b>$92,500</b>
+            <h3>2017 Chevrolet Corvette Grand Sport</h3>
+            <p>15,200 mi <span>8-Speed Automatic</span></p>
+            <b>$67,500</b>
             <a href="#">View Details</a>
           </div>
         </article>
@@ -441,15 +444,14 @@
     <section class="brands">
       <p>We proudly carry top brands</p>
       <div>
-        <span>Toyota</span>
-        <span>Honda</span>
-        <span>Ford</span>
+        <span>Rolls-Royce</span>
+        <span>Alfa Romeo</span>
+        <span>Audi</span>
         <span>Chevrolet</span>
-        <span>Nissan</span>
+        <span>Yamaha</span>
         <span>BMW</span>
         <span>Mercedes-Benz</span>
-        <span>Lexus</span>
-        <span>Jeep</span>
+        <span>Corvette</span>
       </div>
     </section>
 

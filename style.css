@@ -29,6 +29,19 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  background: rgba(2, 12, 26, .66);
+  backdrop-filter: blur(5px);
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1200,6 +1213,16 @@ h1 span {
     top: 20px;
     right: 0;
     display: inline-flex;
+    z-index: 70;
+  }
+
+  .menu-toggle.is-open {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    border-color: rgba(255, 255, 255, .18);
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .24);
   }
 
   .logo,
@@ -1227,35 +1250,89 @@ h1 span {
 
   .nav-links {
     display: grid;
-    order: 4;
-    width: 100%;
-    max-height: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 60;
+    align-content: start;
+    width: min(88vw, 370px);
+    height: 100dvh;
+    max-height: none;
     margin-left: 0;
-    padding: 0;
-    overflow: hidden;
-    border: 0 solid rgba(7, 93, 192, .12);
-    border-radius: var(--radius);
-    background: #ffffff;
-    box-shadow: none;
+    padding: 86px 18px 24px;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 0;
+    background:
+      linear-gradient(160deg, rgba(4, 31, 62, .98), rgba(5, 47, 93, .96)),
+      url("https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=900") center/cover;
+    box-shadow: -22px 0 50px rgba(0, 0, 0, .28);
     opacity: 0;
-    transition: max-height .25s ease, padding .25s ease, border-width .25s ease, opacity .2s ease, box-shadow .2s ease;
+    transform: translateX(104%);
+    transition: transform .28s ease, opacity .22s ease;
+    counter-reset: nav-menu;
+  }
+
+  .nav-links::before {
+    content: "Menu";
+    display: block;
+    margin-bottom: 18px;
+    color: #ffd36a;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+
+  .nav-links::after {
+    content: "STALLION AUTOS";
+    display: block;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+    color: rgba(255, 255, 255, .68);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .22em;
   }
 
   .nav-links.is-open {
-    max-height: 520px;
-    padding: 10px;
-    border-width: 1px;
-    box-shadow: 0 18px 38px rgba(8, 28, 54, .12);
     opacity: 1;
+    transform: translateX(0);
   }
 
   .nav-links a {
     display: flex;
     align-items: center;
-    min-height: 44px;
-    padding: 0 14px;
-    border-color: rgba(7, 93, 192, .08);
-    background: #f7fbff;
+    justify-content: space-between;
+    min-height: 58px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .08);
+    color: #ffffff;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, .12);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-links a::before {
+    counter-increment: nav-menu;
+    content: "0" counter(nav-menu);
+    margin-right: 12px;
+    color: #ffd36a;
+    font-size: 11px;
+  }
+
+  .nav-links a::after {
+    content: ">";
+    color: rgba(255, 255, 255, .7);
+  }
+
+  .nav-links a:hover,
+  .nav-links .active {
+    border-color: rgba(255, 211, 106, .5);
+    background: rgba(255, 255, 255, .16);
+    color: #ffffff;
+    transform: translateX(-3px);
   }
 
   .nav-links a + a {
