@@ -130,6 +130,7 @@ button {
 }
 
 .nav-inner {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -160,6 +161,49 @@ button {
   font-size: 10px;
   font-weight: 800;
   letter-spacing: .55em;
+}
+
+.menu-toggle {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(7, 93, 192, .18);
+  border-radius: var(--radius);
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(8, 28, 54, .08);
+}
+
+.menu-toggle span {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--navy);
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.menu-toggle span:nth-child(1) {
+  transform: translateY(-7px);
+}
+
+.menu-toggle span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: rotate(-45deg);
 }
 
 .nav-links {
@@ -1045,6 +1089,13 @@ h1 span {
     padding: 22px 0;
   }
 
+  .menu-toggle {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: inline-flex;
+  }
+
   .logo,
   .header-btn {
     min-width: 0;
@@ -1069,7 +1120,40 @@ h1 span {
   }
 
   .nav-links {
-    display: none;
+    display: grid;
+    order: 4;
+    width: 100%;
+    max-height: 0;
+    margin-left: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0 solid rgba(7, 93, 192, .12);
+    border-radius: var(--radius);
+    background: #ffffff;
+    box-shadow: none;
+    opacity: 0;
+    transition: max-height .25s ease, padding .25s ease, border-width .25s ease, opacity .2s ease, box-shadow .2s ease;
+  }
+
+  .nav-links.is-open {
+    max-height: 520px;
+    padding: 10px;
+    border-width: 1px;
+    box-shadow: 0 18px 38px rgba(8, 28, 54, .12);
+    opacity: 1;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border-color: rgba(7, 93, 192, .08);
+    background: #f7fbff;
+  }
+
+  .nav-links a + a {
+    margin-top: 8px;
   }
 
   .hero {

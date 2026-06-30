@@ -13,6 +13,21 @@
         event.target.removeAttribute("src");
       }
     }, true);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuButton = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      if (!menuButton || !navLinks) {
+        return;
+      }
+
+      menuButton.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("is-open");
+        menuButton.classList.toggle("is-open", isOpen);
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    });
   </script>
 </head>
 <body>
@@ -37,7 +52,13 @@
         <small>AUTOS</small>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
         <a class="active" href="#">Home</a>
         <a href="#">Inventory</a>
         <a href="#">Shop by Type</a>
