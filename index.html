@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stallion Autos</title>
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    document.addEventListener("error", function (event) {
+      if (event.target.tagName === "IMG") {
+        event.target.classList.add("image-fallback");
+        event.target.removeAttribute("src");
+      }
+    }, true);
+  </script>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="container top-inner">
+      <span>3450 SW 9th St, Miami, FL 33135</span>
+      <span>(305) 555-0199</span>
+      <span>Sales: Mon - Sat 9am - 8pm</span>
+      <span>Service: Mon - Sat 7am - 6pm</span>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="logo" href="#">
+        <span>STALLION</span>
+        <small>AUTOS</small>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a class="active" href="#">Home</a>
+        <a href="#">Inventory</a>
+        <a href="#">Shop by Type</a>
+        <a href="#">Financing</a>
+        <a href="#">Specials</a>
+        <a href="#">Service & Parts</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="nav-socials" aria-label="Social links">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+
+      <a class="header-btn" href="#">Get Pre-Approved</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Curated vehicles. Confident ownership.</p>
+          <h1>Upgrade Your Drive.<br><span>Own The Road.</span></h1>
+          <p>Shop inspected new and pre-owned vehicles with transparent pricing, flexible financing, and a team that keeps the process calm from hello to handover.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#">Browse Inventory</a>
+            <a class="btn ghost" href="#">Get Pre-Approved</a>
+          </div>
+        </div>
+        <img class="hero-car" src="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Blue luxury sedan">
+      </div>
+
+   </section>
+
+    <section class="vehicle-search container">
+      <h2>Find Your Next Vehicle</h2>
+      <form>
+        <label>
+          <span>Make</span>
+          <select><option>Any Make</option><option>Toyota</option><option>Honda</option><option>Ford</option><option>Chevrolet</option><option>BMW</option><option>Mercedes-Benz</option><option>Land Rover</option><option>Porsche</option></select>
+        </label>
+        <label>
+          <span>Model</span>
+          <select><option>Any Model</option><option>RAV4 XLE</option><option>Accord EX-L</option><option>F-150 XLT SuperCrew</option><option>Camaro 2LT Coupe</option><option>M340i xDrive</option><option>GLE 350 4MATIC</option><option>Range Rover Sport HSE</option><option>911 Carrera Coupe</option></select>
+        </label>
+        <label>
+          <span>Body Style</span>
+          <select><option>Any Body Style</option><option>Sedan</option><option>SUV</option><option>Truck</option></select>
+        </label>
+        <label>
+          <span>Max Price</span>
+          <select><option>Any Price</option><option>$20,000</option><option>$30,000</option><option>$40,000+</option></select>
+        </label>
+        <button type="submit">Search</button>
+      </form>
+      <a class="advanced" href="#">Advanced Search</a>
+    </section>
+
+    <section class="stats container">
+      <article>
+        <strong>850+</strong>
+        <span>Vehicles Sold</span>
+      </article>
+      <article>
+        <strong>4.9/5</strong>
+        <span>Customer Rating</span>
+      </article>
+      <article>
+        <strong>72hr</strong>
+        <span>Fast Approval</span>
+      </article>
+      <article>
+        <strong>120+</strong>
+        <span>Cars In Stock</span>
+      </article>
+    </section>
+
+    <section class="spotlight container">
+      <div class="spotlight-copy">
+        <p class="eyebrow">Featured deal of the week</p>
+        <h2>2024 BMW M340i xDrive Sedan</h2>
+        <p>Turbocharged inline-six power, M Sport styling, premium leather interior, digital cockpit, and low mileage. Built for drivers who want executive comfort with real road presence.</p>
+        <div class="spec-list">
+          <span>12,400 mi</span>
+          <span>Automatic</span>
+          <span>AWD</span>
+          <span>Clean title</span>
+          <span>Warranty eligible</span>
+        </div>
+        <div class="price-row">
+          <strong>$48,990</strong>
+          <a class="btn primary" href="#">Schedule Test Drive</a>
+        </div>
+      </div>
+      <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="2024 BMW M340i xDrive Sedan">
+    </section>
+
+    <section class="inventory container">
+      <div class="section-title">
+        <span></span>
+        <h2>Shop Our Inventory</h2>
+        <span></span>
+      </div>
+
+      <div class="tabs">
+        <a class="active" href="#">All Vehicles</a>
+        <a href="#">Sedans</a>
+        <a href="#">SUVs</a>
+        <a href="#">Trucks</a>
+        <a href="#">Coupes</a>
+        <a href="#">Hybrids</a>
+      </div>
+
+      <div class="vehicle-grid">
+        <article class="vehicle-card">
+          <strong>2023</strong>
+          <img src="https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2023 Toyota RAV4 XLE SUV">
+          <div class="card-body">
+            <h3>2023 Toyota RAV4 XLE AWD</h3>
+            <p>28,120 mi <span>8-Speed Automatic</span></p>
+            <b>$26,490</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2022</strong>
+          <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2022 Honda Accord EX-L sedan">
+          <div class="card-body">
+            <h3>2022 Honda Accord EX-L Sedan</h3>
+            <p>31,540 mi <span>CVT Automatic</span></p>
+            <b>$24,990</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2021</strong>
+          <img src="https://images.pexels.com/photos/1119796/pexels-photo-1119796.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2021 Ford F-150 XLT SuperCrew truck">
+          <div class="card-body">
+            <h3>2021 Ford F-150 XLT SuperCrew</h3>
+            <p>45,300 mi <span>10-Speed Automatic</span></p>
+            <b>$33,990</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2023</strong>
+          <img src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2023 Chevrolet Camaro 2LT Coupe">
+          <div class="card-body">
+            <h3>2023 Chevrolet Camaro 2LT Coupe</h3>
+            <p>10,860 mi <span>8-Speed Automatic</span></p>
+            <b>$28,990</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2024</strong>
+          <img src="https://images.pexels.com/photos/93632/pexels-photo-93632.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2024 BMW M340i xDrive sedan">
+          <div class="card-body">
+            <h3>2024 BMW M340i xDrive Sedan</h3>
+            <p>12,400 mi <span>8-Speed Sport Automatic</span></p>
+            <b>$48,990</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2022</strong>
+          <img src="https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2022 Mercedes-Benz GLE 350 4MATIC SUV">
+          <div class="card-body">
+            <h3>2022 Mercedes-Benz GLE 350 4MATIC</h3>
+            <p>29,210 mi <span>9G-TRONIC Automatic</span></p>
+            <b>$52,400</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2021</strong>
+          <img src="https://images.pexels.com/photos/3849555/pexels-photo-3849555.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2021 Land Rover Range Rover Sport HSE SUV">
+          <div class="card-body">
+            <h3>2021 Land Rover Range Rover Sport HSE</h3>
+            <p>38,780 mi <span>8-Speed Automatic</span></p>
+            <b>$56,990</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+        <article class="vehicle-card">
+          <strong>2023</strong>
+          <img src="https://images.pexels.com/photos/358070/pexels-photo-358070.jpeg?auto=compress&cs=tinysrgb&w=800" alt="2023 Porsche 911 Carrera Coupe">
+          <div class="card-body">
+            <h3>2023 Porsche 911 Carrera Coupe</h3>
+            <p>8,950 mi <span>8-Speed PDK</span></p>
+            <b>$92,500</b>
+            <a href="#">View Details</a>
+          </div>
+        </article>
+      </div>
+
+      <a class="view-all" href="#">View All Inventory</a>
+    </section>
+
+    <section class="services container">
+      <div class="section-title">
+        <span></span>
+        <h2>More Than Car Sales</h2>
+        <span></span>
+      </div>
+      <div class="service-grid">
+        <article>
+          <b>01</b>
+          <h3>Vehicle Sourcing</h3>
+          <p>Tell us the exact car you want and our team will help source a clean, verified option.</p>
+        </article>
+        <article>
+          <b>02</b>
+          <h3>Trade-In Valuation</h3>
+          <p>Get a fast market estimate and use your current vehicle as leverage for your next upgrade.</p>
+        </article>
+        <article>
+          <b>03</b>
+          <h3>Service & Protection</h3>
+          <p>Maintenance, detailing, ceramic coating, warranties, and protection plans in one place.</p>
+        </article>
+        <article>
+          <b>04</b>
+          <h3>Delivery Concierge</h3>
+          <p>Choose showroom pickup or local delivery with paperwork prepared before you arrive.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="experience container">
+      <div class="experience-media">
+        <img src="https://images.pexels.com/photos/7144175/pexels-photo-7144175.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Customer receiving vehicle keys">
+      </div>
+      <div class="experience-copy">
+        <p class="eyebrow">Built around your decision</p>
+        <h2>A cleaner way to buy your next vehicle.</h2>
+        <p>Stallion Autos brings the best parts of a premium showroom into a simple buying experience. Compare options, understand the numbers, and leave with a vehicle that fits the way you actually drive.</p>
+        <div class="check-grid">
+          <span>Multi-point inspection</span>
+          <span>Clear vehicle history</span>
+          <span>Competitive lender network</span>
+          <span>Same-day trade-in estimate</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-title">
+          <span></span>
+          <h2>How It Works</h2>
+          <span></span>
+        </div>
+        <div class="process-grid">
+          <article>
+            <b>1</b>
+            <h3>Choose Your Vehicle</h3>
+            <p>Browse inventory, compare trims, and save the models that match your budget and lifestyle.</p>
+          </article>
+          <article>
+            <b>2</b>
+            <h3>Review Your Numbers</h3>
+            <p>Get payments, trade-in value, and finance options explained clearly before you visit.</p>
+          </article>
+          <article>
+            <b>3</b>
+            <h3>Drive Away Ready</h3>
+            <p>Schedule a test drive, complete paperwork, and collect your keys without the dealership drag.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <div class="section-title light">
+          <span></span>
+          <h2>What Drivers Say</h2>
+          <span></span>
+        </div>
+        <div class="review-grid">
+          <article>
+            <div class="stars">5.0 rating</div>
+            <p>Stallion made my approval simple and had the exact SUV I wanted ready for a test drive.</p>
+            <strong>Marcus A.</strong>
+          </article>
+          <article>
+            <div class="stars">5.0 rating</div>
+            <p>The vehicle was clean, pricing was clear, and the team handled everything professionally.</p>
+            <strong>Daniel C.</strong>
+          </article>
+          <article>
+            <div class="stars">5.0 rating</div>
+            <p>I traded in my old sedan and drove away with a BMW the same day. Smooth experience.</p>
+            <strong>Renee M.</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-grid">
+        <article>
+          <span>QA</span>
+          <div><h3>Quality You Can Trust</h3><p>Every vehicle is inspected for safety and peace of mind.</p></div>
+        </article>
+        <article>
+          <span>$</span>
+          <div><h3>Best Price Guarantee</h3><p>Competitive pricing and strong value on every vehicle.</p></div>
+        </article>
+        <article>
+          <span>FX</span>
+          <div><h3>Flexible Financing</h3><p>Multiple financing options tailored to your budget.</p></div>
+        </article>
+        <article>
+          <span>24</span>
+          <div><h3>Expert Support</h3><p>Our team helps you every step of the way.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="promo-grid">
+      <article class="promo finance">
+        <div>
+          <p class="eyebrow">Easy financing</p>
+          <h2>Get Approved<br>In Minutes</h2>
+          <p>Apply online and get pre-approved quickly with no impact on your credit score.</p>
+          <a class="btn primary" href="#">Get Pre-Approved</a>
+        </div>
+      </article>
+      <article class="promo trade">
+        <div>
+          <p class="eyebrow">Value your trade</p>
+          <h2>Know Your Car's<br>True Value</h2>
+          <p>Get a fair market value for your vehicle in just a few easy steps.</p>
+          <a class="btn ghost" href="#">Value Your Trade</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="brands">
+      <p>We proudly carry top brands</p>
+      <div>
+        <span>Toyota</span>
+        <span>Honda</span>
+        <span>Ford</span>
+        <span>Chevrolet</span>
+        <span>Nissan</span>
+        <span>BMW</span>
+        <span>Mercedes-Benz</span>
+        <span>Lexus</span>
+        <span>Jeep</span>
+      </div>
+    </section>
+
+    <section class="newsletter container">
+      <div>
+        <p class="eyebrow">Inventory alerts</p>
+        <h2>Get first look at fresh arrivals.</h2>
+        <p>Tell us what you are shopping for and we will send matching vehicles before they hit the front row.</p>
+      </div>
+      <form>
+        <input type="email" placeholder="Email address" aria-label="Email address">
+        <button type="submit">Notify Me</button>
+      </form>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div>
+          <p class="eyebrow">Ready for your next upgrade?</p>
+          <h2>Find the car that makes every arrival feel different.</h2>
+        </div>
+        <a class="btn primary" href="#">Start Shopping</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo footer-logo" href="#">
+          <span>STALLION</span>
+          <small>AUTOS</small>
+        </a>
+        <p>We are more than a dealership. We are your automotive partner.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#">Inventory</a>
+        <a href="#">Shop by Type</a>
+        <a href="#">Financing</a>
+        <a href="#">Specials</a>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p>(305) 555-0199</p>
+        <p>info@stallionautos.com</p>
+        <p>3450 SW 9th St, Miami, FL 33135</p>
+      </div>
+      <div>
+        <h3>Hours</h3>
+        <p>Sales: Mon - Sat 9:00 AM - 8:00 PM</p>
+        <p>Service: Mon - Sat 7:00 AM - 6:00 PM</p>
+      </div>
+    </div>
+    <div class="copyright">Copyright 2026 Stallion Autos. All rights reserved.</div>
+  </footer>
+</body>
+</html>
