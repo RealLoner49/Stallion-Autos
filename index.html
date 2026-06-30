@@ -18,6 +18,18 @@
     document.addEventListener("DOMContentLoaded", function () {
       const menuButton = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
+      const siteHeader = document.querySelector(".site-header");
+
+      function updateNavbarState() {
+        if (!siteHeader) {
+          return;
+        }
+
+        siteHeader.classList.toggle("is-scrolled", window.scrollY > 8);
+      }
+
+      updateNavbarState();
+      window.addEventListener("scroll", updateNavbarState, { passive: true });
 
       if (!menuButton || !navLinks) {
         return;
@@ -28,6 +40,31 @@
         menuButton.classList.toggle("is-open", isOpen);
         menuButton.setAttribute("aria-expanded", String(isOpen));
         document.body.classList.toggle("menu-open", isOpen);
+        updateNavbarState();
+      });
+
+      document.addEventListener("click", function (event) {
+        const menuIsOpen = navLinks.classList.contains("is-open");
+        const clickedInsideMenu = navLinks.contains(event.target);
+        const clickedToggle = menuButton.contains(event.target);
+
+        if (menuIsOpen && !clickedInsideMenu && !clickedToggle) {
+          navLinks.classList.remove("is-open");
+          menuButton.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+          updateNavbarState();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          navLinks.classList.remove("is-open");
+          menuButton.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+          document.body.classList.remove("menu-open");
+          updateNavbarState();
+        }
       });
 
       navLinks.querySelectorAll("a").forEach(function (link) {
@@ -36,6 +73,7 @@
           menuButton.classList.remove("is-open");
           menuButton.setAttribute("aria-expanded", "false");
           document.body.classList.remove("menu-open");
+          updateNavbarState();
         });
       });
 
@@ -45,6 +83,7 @@
           menuButton.classList.remove("is-open");
           menuButton.setAttribute("aria-expanded", "false");
           document.body.classList.remove("menu-open");
+          updateNavbarState();
         }
       });
     });
@@ -425,18 +464,30 @@
     <section class="promo-grid">
       <article class="promo finance">
         <div>
-          <p class="eyebrow">Easy financing</p>
-          <h2>Get Approved<br>In Minutes</h2>
-          <p>Apply online and get pre-approved quickly with no impact on your credit score.</p>
-          <a class="btn primary" href="#">Get Pre-Approved</a>
+          <span class="promo-tag">01</span>
+          <p class="eyebrow">Tailored financing</p>
+          <h2>Secure The Right Terms Before You Visit.</h2>
+          <p>Review payment options designed around your preferred vehicle, credit profile, and monthly budget.</p>
+          <ul>
+            <li>Soft pre-qualification</li>
+            <li>Multiple lender options</li>
+            <li>Clear monthly estimates</li>
+          </ul>
+          <a class="btn primary" href="#">Start Approval</a>
         </div>
       </article>
       <article class="promo trade">
         <div>
-          <p class="eyebrow">Value your trade</p>
-          <h2>Know Your Car's<br>True Value</h2>
-          <p>Get a fair market value for your vehicle in just a few easy steps.</p>
-          <a class="btn ghost" href="#">Value Your Trade</a>
+          <span class="promo-tag">02</span>
+          <p class="eyebrow">Trade-in appraisal</p>
+          <h2>Turn Your Current Vehicle Into Buying Power.</h2>
+          <p>Get a market-backed appraisal and use your trade value toward a cleaner, faster upgrade.</p>
+          <ul>
+            <li>Same-day estimate</li>
+            <li>Transparent market review</li>
+            <li>Equity applied to purchase</li>
+          </ul>
+          <a class="btn ghost" href="#">Appraise My Trade</a>
         </div>
       </article>
     </section>
