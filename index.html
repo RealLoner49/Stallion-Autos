@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stallion Autos</title>
   <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23052f5d'/%3E%3Ctext x='32' y='41' font-size='30' font-family='Arial' font-weight='900' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
   <script>
     document.addEventListener("error", function (event) {
@@ -26,6 +27,22 @@
         const isOpen = navLinks.classList.toggle("is-open");
         menuButton.classList.toggle("is-open", isOpen);
         menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("is-open");
+          menuButton.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      window.addEventListener("resize", function () {
+        if (window.innerWidth > 700) {
+          navLinks.classList.remove("is-open");
+          menuButton.classList.remove("is-open");
+          menuButton.setAttribute("aria-expanded", "false");
+        }
       });
     });
   </script>
@@ -97,7 +114,23 @@
    </section>
 
     <section class="vehicle-search container">
-      <h2>Find Your Next Vehicle</h2>
+      <div class="search-head">
+        <div>
+          <p class="search-kicker">Smart inventory search</p>
+          <h2>Find Your Next Vehicle</h2>
+          <p>Choose your preferred make, body style, and budget. We will surface the best-matching vehicles in stock.</p>
+        </div>
+        <div class="search-meta">
+          <strong>120+</strong>
+          <span>Ready to drive</span>
+        </div>
+      </div>
+      <div class="search-pills" aria-label="Popular searches">
+        <a href="#">Luxury SUVs</a>
+        <a href="#">Under $30k</a>
+        <a href="#">Low Mileage</a>
+        <a href="#">Trade-In Ready</a>
+      </div>
       <form>
         <label>
           <span>Make</span>
@@ -117,7 +150,10 @@
         </label>
         <button type="submit">Search</button>
       </form>
-      <a class="advanced" href="#">Advanced Search</a>
+      <div class="search-footer">
+        <a class="advanced" href="#">Advanced Search</a>
+        <span>No pressure. Just clean options.</span>
+      </div>
     </section>
 
     <section class="stats container">

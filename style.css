@@ -382,26 +382,112 @@ h1 span {
 .vehicle-search {
   position: relative;
   z-index: 3;
-  margin-top: -36px;
+  margin-top: -44px;
   padding: 28px;
-  border: 1px solid rgba(255, 255, 255, .14);
+  border: 1px solid rgba(7, 93, 192, .14);
   border-radius: var(--radius);
-  background: linear-gradient(135deg, #052f5d, #063e78);
-  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, .98), rgba(247, 251, 255, .96)),
+    url("https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&w=1400") center/cover;
+  color: var(--ink);
   box-shadow: var(--shadow);
 }
 
-.vehicle-search h2 {
+.vehicle-search::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border-top: 4px solid var(--blue);
+  pointer-events: none;
+}
+
+.search-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
   margin-bottom: 18px;
-  font-size: 18px;
+}
+
+.search-kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .06em;
   text-transform: uppercase;
+}
+
+.vehicle-search h2 {
+  margin-bottom: 8px;
+  font-size: clamp(24px, 2.3vw, 34px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.search-head p:not(.search-kicker) {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.search-meta {
+  min-width: 132px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, var(--navy), #064a99);
+  color: #ffffff;
+  text-align: center;
+  box-shadow: 0 16px 30px rgba(7, 93, 192, .2);
+}
+
+.search-meta strong {
+  display: block;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.search-meta span {
+  display: block;
+  margin-top: 6px;
+  color: #dceeff;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.search-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-pills a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid rgba(7, 93, 192, .14);
+  border-radius: var(--radius);
+  background: #edf5ff;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 900;
 }
 
 .vehicle-search form {
   display: grid;
-  grid-template-columns: repeat(4, 1fr) 140px;
-  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) 150px;
+  gap: 14px;
   align-items: end;
+  padding: 18px;
+  border: 1px solid rgba(7, 93, 192, .1);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(8, 28, 54, .06);
 }
 
 .vehicle-search label {
@@ -410,8 +496,9 @@ h1 span {
 }
 
 .vehicle-search span {
+  color: #314057;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .vehicle-search select,
@@ -431,12 +518,31 @@ h1 span {
   cursor: pointer;
 }
 
-.advanced {
-  display: block;
+.vehicle-search button {
+  min-height: 46px;
+}
+
+.search-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
   margin-top: 14px;
-  text-align: right;
+}
+
+.advanced {
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue);
   font-size: 12px;
-  color: #dceeff;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.search-footer span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .stats {
@@ -1201,9 +1307,47 @@ h1 span {
   }
 
   .vehicle-search {
-    width: 100%;
+    width: min(100% - 28px, 1180px);
     margin-top: 0;
-    border-radius: 0;
+    padding: 22px;
+    border-radius: var(--radius);
+  }
+
+  .search-head {
+    display: grid;
+    gap: 16px;
+  }
+
+  .search-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 14px 16px;
+    text-align: left;
+  }
+
+  .search-meta span {
+    margin-top: 0;
+  }
+
+  .search-pills {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-pills a {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .vehicle-search form {
+    padding: 14px;
+  }
+
+  .search-footer {
+    display: grid;
+    gap: 8px;
   }
 
   .spotlight-copy,
